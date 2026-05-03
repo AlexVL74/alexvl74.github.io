@@ -476,17 +476,24 @@ li i {
 }
 
 .subtitulo-hero {
-  font-size: 18px;
+  font-size: 20px;
   color: #cccccc;
   margin-top: 10px;
-  font-weight: 300;
+  font-weight: 400;
   text-align: center;
+  width: 100%;
+  display: block;
+  letter-spacing: 1px;
 }
+
 .texto-animado {
   color: #fc6f03;
-  font-size: 18px;
+  font-size: 21px;
   display: inline;
+  font-weight: 600;
+  font-family:  'Poppins', sans-serif;
 }
+
 
 @keyframes parpadeo {
   0%, 100% { opacity: 1; }
