@@ -43,3 +43,18 @@ document.querySelector(".formulario").addEventListener("submit", function(e) {
     this.reset();
   }, 100);
 });
+const form = document.getElementById('miFormulario');
+if(form) {
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    await fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+    form.reset();
+    form.style.display = 'none';
+    document.getElementById('mensaje-exito').style.display = 'block';
+  });
+}
