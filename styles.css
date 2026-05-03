@@ -47,8 +47,19 @@ li i {
   padding-bottom: 15px;
 }
 .boton-contenedor {
-  text-align: center;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
   margin-top: 30px;
+}
+
+.boton-whatsapp {
+  background-color: #25d366 !important;
+}
+
+.boton-whatsapp:hover {
+  background-color: #1da851 !important;
 }
 .boton {
   background-color: #fc6f03;
