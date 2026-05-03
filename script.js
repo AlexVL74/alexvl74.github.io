@@ -48,29 +48,41 @@ if(form) {
   form.addEventListener('submit', async function(e) {
     e.preventDefault();
 
-    const nombre = form.querySelector('[name="nombre"]').value.trim();
-    const email = form.querySelector('[name="email"]').value.trim();
-    const mensaje = form.querySelector('[name="mensaje"]').value.trim();
+    const nombre = document.getElementById('campo-nombre').value.trim();
+    const email = document.getElementById('campo-email').value.trim();
+    const mensaje = document.getElementById('campo-mensaje').value.trim();
 
-    // Validar nombre solo letras y espacios
+    const errorNombre = document.getElementById('error-nombre');
+    const errorEmail = document.getElementById('error-email');
+    const errorMensaje = document.getElementById('error-mensaje');
+
+    errorNombre.style.display = 'none';
+    errorEmail.style.display = 'none';
+    errorMensaje.style.display = 'none';
+
+    let valido = true;
+
     const regexNombre = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
     if(!regexNombre.test(nombre) || nombre.length < 3) {
-      alert('Por favor escribe un nombre válido, solo letras.');
-      return;
+      errorNombre.textContent = 'Por favor escribe un nombre válido, solo letras.';
+      errorNombre.style.display = 'block';
+      valido = false;
     }
 
-    // Validar correo
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if(!regexEmail.test(email)) {
-      alert('Por favor escribe un correo electrónico válido.');
-      return;
+      errorEmail.textContent = 'Por favor escribe un correo electrónico válido.';
+      errorEmail.style.display = 'block';
+      valido = false;
     }
 
-    // Validar mensaje
     if(mensaje.length < 10) {
-      alert('Por favor escribe un mensaje de al menos 10 caracteres.');
-      return;
+      errorMensaje.textContent = 'Por favor escribe un mensaje de al menos 10 caracteres.';
+      errorMensaje.style.display = 'block';
+      valido = false;
     }
+
+    if(!valido) return;
 
     const data = new FormData(form);
     await fetch(form.action, {
