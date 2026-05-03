@@ -115,15 +115,18 @@
 
       <section id="contacto">
         <h2 class="subtitulo">Contacto</h2>
-            <form class="formulario" id="miFormulario" action="https://formspree.io/f/mzdozkve" method="POST">
+            <form class="formulario" id="miFormulario" action="https://formspree.io/f/mzdozkve" method="POST" novalidate>
                   <input type="hidden" name="_next" value="https://alexvl74.github.io">
-                  <input type="text" name="nombre" placeholder="Tu nombre" class="campo">
-                  <input type="email" name="email" placeholder="Tu correo" class="campo">
-                  <textarea name="mensaje" placeholder="Tu mensaje" class="campo" rows="5"></textarea>
+                  <input type="text" name="nombre" placeholder="Tu nombre" class="campo" id="campo-nombre">
+                        <p class="error" id="error-nombre"></p>
+                  <input type="email" name="email" placeholder="Tu correo" class="campo" id="campo-email">
+                        <p class="error" id="error-email"></p>
+                  <textarea name="mensaje" placeholder="Tu mensaje" class="campo" id="campo-mensaje" rows="5"></textarea>
+                        <p class="error" id="error-mensaje"></p>
                   <button type="submit" class="boton">Enviar mensaje</button>
             </form>
                 <div id="mensaje-exito" style="display:none; text-align:center; color:#fc6f03; font-size:18px; margin-top:20px;">
-                ✅ ¡Mensaje enviado con éxito! En breve me pondré en contacto contigo.
+                ✅ ¡¡¡Mensaje enviado con éxito! En breve me pondré en contacto contigo...
                 </div>
       </section>
 
@@ -133,7 +136,7 @@
           <a href="tel:+529174025447" class="boton">
           <i class="fas fa-phone"></i> Llamar ahora</a>
           <a href="https://wa.me/529174025447?text=Hola%20Alejandro,%20me%20interesa%20contratar%20uno%20de%20tus%20servicios.%20Mi%20nombre%20es:%20_%20y%20necesito:%20_" class="boton boton-whatsapp" target="_blank">
-          <i class="fab fa-whatsapp"></i> WhatsApp Business</a>
+          <i class="fab fa-whatsapp"></i> WhatsApp</a>
       </div>
 
     </div>
