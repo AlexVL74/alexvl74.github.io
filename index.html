@@ -115,13 +115,16 @@
 
       <section id="contacto">
         <h2 class="subtitulo">Contacto</h2>
-            <form class="formulario" action="https://formspree.io/f/mzdozkve" method="POST">
+            <form class="formulario" id="miFormulario" action="https://formspree.io/f/mzdozkve" method="POST">
                   <input type="hidden" name="_next" value="https://alexvl74.github.io">
                   <input type="text" name="nombre" placeholder="Tu nombre" class="campo">
                   <input type="email" name="email" placeholder="Tu correo" class="campo">
                   <textarea name="mensaje" placeholder="Tu mensaje" class="campo" rows="5"></textarea>
                   <button type="submit" class="boton">Enviar mensaje</button>
             </form>
+                <div id="mensaje-exito" style="display:none; text-align:center; color:#fc6f03; font-size:18px; margin-top:20px;">
+                ✅ ¡Mensaje enviado con éxito! En breve me pondré en contacto contigo.
+                </div>
       </section>
 
       <hr class="separador">
