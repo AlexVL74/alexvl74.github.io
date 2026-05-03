@@ -47,12 +47,38 @@ const form = document.getElementById('miFormulario');
 if(form) {
   form.addEventListener('submit', async function(e) {
     e.preventDefault();
+
+    const nombre = form.querySelector('[name="nombre"]').value.trim();
+    const email = form.querySelector('[name="email"]').value.trim();
+    const mensaje = form.querySelector('[name="mensaje"]').value.trim();
+
+    // Validar nombre solo letras y espacios
+    const regexNombre = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
+    if(!regexNombre.test(nombre) || nombre.length < 3) {
+      alert('Por favor escribe un nombre válido, solo letras.');
+      return;
+    }
+
+    // Validar correo
+    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if(!regexEmail.test(email)) {
+      alert('Por favor escribe un correo electrónico válido.');
+      return;
+    }
+
+    // Validar mensaje
+    if(mensaje.length < 10) {
+      alert('Por favor escribe un mensaje de al menos 10 caracteres.');
+      return;
+    }
+
     const data = new FormData(form);
     await fetch(form.action, {
       method: 'POST',
       body: data,
       headers: { 'Accept': 'application/json' }
     });
+
     form.reset();
     form.style.display = 'none';
     document.getElementById('mensaje-exito').style.display = 'block';
