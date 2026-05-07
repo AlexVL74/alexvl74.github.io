@@ -423,7 +423,8 @@ textarea.campo {
 
 /* Menú */
 .menu {
-    background-color: #0f3460;
+    background: rgba(15, 52, 96, 0.75);
+    backdrop-filter: blur(12px);
     padding: 15px 40px;
     display: flex;
     justify-content: space-between;
@@ -433,9 +434,87 @@ textarea.campo {
     z-index: 1000;
     animation: fadeIn 0.5s ease;
     flex-wrap: wrap;
+    border-bottom: 1px solid rgba(252, 111, 3, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
+.menu {
+    background: linear-gradient(135deg, #0a1628, #0f3460);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    flex-wrap: wrap;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s ease;
+}
+
+.menu:hover {
+    border-bottom: 2px solid #fc6f03;
+}
+
+.menu {
+    background: linear-gradient(135deg, #0a1628, #0f3460);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 20px;
+    z-index: 1000;
+    flex-wrap: wrap;
+    border-radius: 60px;
+    margin: 0 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(252, 111, 3, 0.2);
+    transition: all 0.3s ease;
+}
+
+.menu:hover {
+    box-shadow: 0 15px 35px rgba(252, 111, 3, 0.2);
+    transform: translateY(-2px);
+}
+
+
+.menu {
+    background: linear-gradient(135deg, #0a1628, #0f3460, #1a4a7a);
+    background-size: 200% 200%;
+    animation: gradienteMovil 8s ease infinite;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes gradienteMovil {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
 .menu-logo .logo { height: 70px; width: auto; }
+
+.logo {
+    height: 70px;
+    width: auto;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 5px rgba(252, 111, 3, 0));
+}
+
+.logo:hover {
+    transform: scale(1.03);
+    filter: drop-shadow(0 0 8px rgba(252, 111, 3, 0.6));
+}
+
 .menu-hamburguesa {
     display: none;
     background: none;
@@ -455,6 +534,29 @@ textarea.campo {
     position: relative;
     transition: color 0.3s ease;
 }
+
+
+.menu-link {
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(252, 111, 3, 0.3), transparent);
+    transition: left 0.4s ease;
+    z-index: -1;
+}
+
+.menu-link:hover::before {
+    left: 100%;
+}
+
 
 .menu-link::after {
     content: '';
@@ -655,11 +757,6 @@ textarea.campo {
 }
 
 /* Menú con efecto vidrio */
-.menu {
-    background: rgba(15, 52, 96, 0.85);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(252, 111, 3, 0.3);
-}
 
 @keyframes latido {
     0%, 100% { transform: scale(1); box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
