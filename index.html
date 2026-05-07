@@ -4,31 +4,39 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-    <title>Mi Página Alex VIDLA...</title>
+    <title>Alex VIDLA | Desarrollo Web Profesional</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
   </head>
   <body>
+    
     <nav class="menu">
-      <div class="menu-logo">
-        <img src="logoavl.png" alt="Mi logo" class="logo">
-      </div>
-      <div class="menu-links">
-        <a href="#inicio" class="menu-link">Inicio</a>
-        <a href="#servicios" class="menu-link">Servicios</a>
-        <a href="#contacto" class="menu-link">Contacto</a>
-      </div>
+        <div class="menu-logo">
+            <img src="logoavl.png" alt="Mi logo" class="logo">
+        </div>
+        <button class="menu-hamburguesa" id="hamburguesa">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="menu-links" id="menu-links">
+            <a href="#inicio" class="menu-link">Inicio</a>
+            <a href="#servicios" class="menu-link">Servicios</a>
+            <a href="#contacto" class="menu-link">Contacto</a>
+        </div>
     </nav>
 
     <div class="contenedor">
 
+      <!-- HERO SECTION MEJORADA -->
       <div id="inicio" class="hero">
           <div class="foto-contenedor">
               <img src="foto.png" alt="Mi foto" class="foto">
           </div>
-          <div class="contenedor">
-              <h1 class="titulo-principal">Hola, soy <span class="nombre-hero">LIA. Alejandro Vidal Lara</span></h1>
-              <p class="subtitulo-hero">Desarrollador Web | <span class="texto-animado"></span></p>
+          <h1 class="titulo-principal">Hola, soy <span class="nombre-hero">Alejandro Vidal Lara</span></h1>
+          <p class="subtitulo-hero">Desarrollador Web | <span class="texto-animado"></span></p>
+          <div class="hero-botones">
+              <a href="#servicios" class="btn-hero">Ver Servicios</a>
+              <a href="#contacto" class="btn-hero-outline">Contactar Ahora</a>
           </div>
+      </div>
 
       <hr class="separador">
 
@@ -98,75 +106,133 @@
 
       <hr class="separador">
 
+      <!-- SECCIÓN DE TESTIMONIOS (NUEVA) -->
+      <h2 class="subtitulo">Lo que dicen mis clientes</h2>
+<div class="testimonios">
+  <div class="testimonio">
+    <div class="testimonio-foto">
+        <!--<img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Foto de María González">-->
+      <img src="maria.jpg" alt="Foto de María González">
+    </div>
+    <h4>María González</h4>
+    <p class="cliente-rol">Dueña de Cafetería "El Sabor"</p>
+    <div class="estrellas">★★★★★</div>
+    <p class="testimonio-texto">"Alejandro entendió exactamente lo que necesitaba. Mi página web ahora atrae más clientes y se ve increíble."</p>
+  </div>
+  <div class="testimonio">
+    <div class="testimonio-foto">
+      <img src="carlos.jpg" alt="Foto de Carlos Ramírez">
+    </div>
+    <h4>Carlos Ramírez</h4>
+    <p class="cliente-rol">Taller Mecánico "Carfix"</p>
+    <div class="estrellas">★★★★★</div>
+    <p class="testimonio-texto">"Excelente trabajo, cumplió los plazos y el diseño superó mis expectativas. Recomendado 100%."</p>
+  </div>
+  <div class="testimonio">
+    <div class="testimonio-foto">
+      <img src="laura.jpg" alt="Foto de Laura Fernández">
+    </div>
+    <h4>Laura Fernández</h4>
+    <p class="cliente-rol">Estudio Jurídico "LF Asociados"</p>
+    <div class="estrellas">★★★★★</div>
+    <p class="testimonio-texto">"Profesional, atento y rápido. Mi sitio web refleja exactamente la seriedad de mi estudio."</p>
+  </div>
+</div>
+
+      <hr class="separador">
+
       <h2 class="subtitulo">Mis redes</h2>
       <div class="redes">
         <a href="https://www.facebook.com" class="red red-facebook" target="_blank">
           <i class="fab fa-facebook"></i> Facebook
         </a>
         <a href="https://www.instagram.com" class="red red-instagram" target="_blank">
-          <i class="fab fa-instagram"></i> Instagram
-        </a>
+          <i class="fab fa-instagram"></i> Instagram</a>
         <a href="https://www.linkedin.com" class="red red-linkedin" target="_blank">
-          <i class="fab fa-linkedin"></i> LinkedIn
-        </a>
+          <i class="fab fa-linkedin"></i> LinkedIn</a>
       </div>
 
       <hr class="separador">
 
       <section id="contacto">
         <h2 class="subtitulo">Contacto</h2>
-            <form class="formulario" id="miFormulario" action="https://formspree.io/f/mzdozkve" method="POST" novalidate>
-                  <input type="hidden" name="_next" value="https://alexvl74.github.io">
-                  <input type="text" name="nombre" placeholder="Tu nombre" class="campo" id="campo-nombre">
-                        <p class="error" id="error-nombre"></p>
-                  <input type="email" name="email" placeholder="Tu correo" class="campo" id="campo-email">
-                        <p class="error" id="error-email"></p>
-                  <textarea name="mensaje" placeholder="Tu mensaje" class="campo" id="campo-mensaje" rows="5"></textarea>
-                        <p class="error" id="error-mensaje"></p>
-                  <button type="submit" class="boton">Enviar mensaje</button>
-            </form>
-                <div id="mensaje-exito" style="display:none; text-align:center; color:#fc6f03; font-size:18px; margin-top:20px;">
-                ✅ ¡¡¡Mensaje enviado con éxito! En breve me pondré en contacto contigo...
-                </div>
+        <form class="formulario" id="miFormulario" action="https://formspree.io/f/mzdozkve" method="POST" novalidate>
+          <input type="hidden" name="_next" value="https://alexvl74.github.io">
+          <input type="text" name="nombre" placeholder="Tu nombre" class="campo" id="campo-nombre">
+          <p class="error" id="error-nombre"></p>
+          <input type="email" name="email" placeholder="Tu correo" class="campo" id="campo-email">
+          <p class="error" id="error-email"></p>
+          <textarea name="mensaje" placeholder="Tu mensaje" class="campo" id="campo-mensaje" rows="5"></textarea>
+          <p class="error" id="error-mensaje"></p>
+          <button type="submit" class="boton">Enviar mensaje</button>
+        </form>
+        <div id="mensaje-exito" style="display:none; text-align:center; color:#fc6f03; font-size:18px; margin-top:20px;">
+          ✅ ¡¡¡Mensaje enviado con éxito! En breve me pondré en contacto contigo...
+        </div>
       </section>
 
       <hr class="separador">
 
       <div class="boton-contenedor">
-          <a href="tel:+529174025447" class="boton">
+        <a href="tel:+529174025447" class="boton">
           <i class="fas fa-phone"></i> Llamar ahora</a>
-          <a href="https://wa.me/529174025447?text=Hola%20Alejandro,%20me%20interesa%20contratar%20uno%20de%20tus%20servicios.%20Mi%20nombre%20es:%20_%20y%20necesito:%20_" class="boton boton-whatsapp" target="_blank">
+        <a href="https://wa.me/529174025447?text=Hola%20Alejandro,%20me%20Interesa%20Contratar%20uno%20de%20tus%20Servicios..." class="boton boton-whatsapp" target="_blank">
           <i class="fab fa-whatsapp"></i> Enviar WhatsApp</a>
       </div>
 
     </div>
 
     <footer class="footer">
-          <div class="footer-contenido">
-                <div class="footer-columna">
-                      <img src="foto1.png" alt="Logo" class="footer-logo">
-                      <p>Diseño y desarrollo de Páginas Web Profesionales para Negocios y Emprendedores.</p>
-          </div>
-          <div class="footer-columna">
-                      <h3>Enlaces rápidos</h3>
-                      <ul class="footer-links">
-                          <li><a href="#inicio">Inicio</a></li>
-                          <li><a href="#servicios">Servicios</a></li>
-                          <li><a href="#contacto">Contacto</a></li>
-                      </ul>
-            </div>
-            <div class="footer-columna">
-                      <h3>Contacto</h3>
-                          <p><i class="fas fa-envelope"></i> <a href="mailto:alexvl.111021@gmail.com" class="footer-email">alexvl.111021@gmail.com</a></p>
-                          <p><i class="fas fa-phone"></i> +52 917 40 25447</p>
-                          <p><i class="fas fa-map-marker-alt"></i> Reforma, Chiapas. México</p>
-              </div>
-            </div>
-            <div class="footer-bottom">
-                  <p style="text-align: center; width: 100%; display: block;">© 2026 Mi Página Web | Alex VIDLA | Todos los Derechos Reservados</p>
-              </div>
+      <div class="footer-contenido">
+        <div class="footer-columna">
+          <img src="foto1.png" alt="Logo" class="footer-logo">
+          <p>Diseño y desarrollo de Páginas Web Profesionales para Negocios y Emprendedores.</p>
+        </div>
+        <div class="footer-columna">
+          <h3>Enlaces rápidos</h3>
+          <ul class="footer-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-columna">
+          <h3>Contacto</h3>
+          <p><i class="fas fa-envelope"></i> <a href="mailto:alexvl.111021@gmail.com" class="footer-email">alexvl.111021@gmail.com</a></p>
+          <p><i class="fas fa-phone"></i> +52 917 40 25447</p>
+          <p><i class="fas fa-map-marker-alt"></i> Reforma, Chiapas. México</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+            <p>© 2026 Mi Página Web | Alex VIDLA | Todos los Derechos Reservados</p>
+            <p style="font-size: 11px; margin-top: 10px; opacity: 0.6;">⚡ Con tecnología de inteligencia y pasión por el código</p>
+    </div>
     </footer>
-    <script src="script.js"></script>
 
+    <!-- Botón flotante de WhatsApp con efecto de latido -->
+<a href="https://wa.me/529174025447?text=Hola%20Alejandro,%20me%20Interesa%20Contratar%20Uno%20de%20tus%20Servicios..." 
+   target="_blank" 
+   style="position: fixed; bottom: 20px; right: 20px; background: linear-gradient(135deg, #25D366, #128C7E); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: all 0.3s ease; z-index: 99999; animation: latido 1.5s ease-in-out infinite;"
+   onmouseover="this.style.animation='none'; this.style.transform='scale(1.1)';"
+   onmouseout="this.style.animation='latido 1.5s ease-in-out infinite'; this.style.transform='scale(1)';">
+    <i class="fab fa-whatsapp" style="font-size: 32px; color: white;"></i>
+</a>
+
+    <!-- POPUP -->
+    <div id="miPopup" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 10, 30, 0.85); backdrop-filter: blur(4px); display: flex; align-items: center; justify-content: center; z-index: 999999; opacity: 0; visibility: hidden; transition: 0.3s ease;">
+      <div style="background: linear-gradient(145deg, #ffffff 0%, #fff5eb 100%); max-width: 450px; width: 90%; border-radius: 32px; padding: 32px; text-align: center !important; position: relative; box-shadow: 0 25px 50px rgba(0,0,0,0.3); border-top: 6px solid #f97316;">
+        <button id="cerrarPopupBtn" style="position: absolute; top: 12px; right: 20px; background: none; border: none; font-size: 28px; cursor: pointer; color: #1e293b;">✕</button>
+        <div style="font-size: 56px; margin-bottom: 16px; text-align: center !important;">🚀</div>
+        <h3 style="font-size: 28px; font-weight: bold; margin: 0 0 12px 0; background: linear-gradient(135deg, #1a5276, #fc6f03); background-clip: text; -webkit-background-clip: text; color: transparent !important; text-align: center !important;">¿Necesitas una web?</h3>
+        <p style="font-size: 18px !important; font-weight: 600 !important; color: #0f172a !important; margin-bottom: 24px !important; text-align: center !important; line-height: 1.5 !important;">
+          "¿Tu negocio aún no tiene página web? Eso te está costando clientes cada día. Hago páginas que trabajan por ti, incluso mientras duermes. Tu presencia digital comienza aquí."<br>
+          ¡Contáctame sin Compromiso!
+        </p>
+        <button id="accionPopupBtn" style="background: linear-gradient(135deg, #f97316, #ea580c); color: white; border: none; padding: 14px 28px; font-size: 18px; font-weight: bold; border-radius: 60px; cursor: pointer; width: 100%; margin-bottom: 16px; transition: transform 0.2s; box-shadow: 0 4px 12px rgba(249,115,22,0.3); text-align: center !important;">📩 Contactarme ahora</button>
+        <p style="font-size: 13px; font-weight: 600; color: #1e293b !important; text-align: center !important;">Respuesta en menos de 24 hrs</p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
