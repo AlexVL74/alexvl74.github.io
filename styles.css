@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #1a1a2e;
+    background: linear-gradient(135deg, #0a1628 0%, #2a3a6e 100%);
     font-family: 'Poppins', sans-serif;
     padding: 40px;
     overflow-x: hidden;
@@ -14,9 +14,12 @@ body {
 }
 
 .contenedor {
+    background: #16213e;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+
+    /*background: #16213e;  /* Volvemos al color original sólido, seguro */
     max-width: 800px;
     margin: 0 auto;
-    background-color: #16213e;
     padding: 0 40px 40px 40px;
     border-radius: 15px;
     box-sizing: border-box;
@@ -179,7 +182,7 @@ li i {
 .separador {
     border: none;
     border-top: 1px solid #0f3460;
-    margin: 40px 0;
+    margin: 60px 0;
 }
 
 /* Subtítulos */
@@ -918,7 +921,7 @@ a, button, .boton, .btn-hero, .tarjeta, .red {
 .tarjeta-precio:hover {
     transform: translateY(-10px);
     border-color: #fc6f03;
-    box-shadow: 0 20px 35px rgba(252, 111, 3, 0.2);
+    box-shadow: 0 20px 35px rgba(252, 111, 3, 0.25);
 }
 
 .tarjeta-precio.destacado {
@@ -1094,4 +1097,164 @@ a, button, .boton, .btn-hero, .tarjeta, .red {
 .blog-leer-mas:hover {
     transform: translateX(5px);
     color: #e05e00;
+}
+
+/* ========================================== */
+/* NARANJA MEJORADO - GRADIENTE + BRILLO      */
+/* ========================================== */
+
+/* Botones principales */
+.boton, .btn-hero, .boton-precio, .proyecto-boton {
+    background: linear-gradient(135deg, #fc6f03, #e05e00) !important;
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(252, 111, 3, 0.2);
+}
+
+.boton:hover, .btn-hero:hover, .boton-precio:hover, .proyecto-boton:hover {
+    background: linear-gradient(135deg, #e05e00, #c04d00) !important;
+    transform: scale(1.02);
+    box-shadow: 0 6px 18px rgba(252, 111, 3, 0.5);
+}
+
+/* Textos naranja con brillo */
+.nombre-hero, .subtitulo, .precio-numero, .tarjeta h3, .testimonio h4 {
+    color: #fc6f03;
+    text-shadow: 0 0 4px rgba(252, 111, 3, 0.4);
+    transition: text-shadow 0.3s;
+}
+
+.nombre-hero:hover, .precio-numero:hover {
+    text-shadow: 0 0 10px rgba(252, 111, 3, 0.8);
+}
+
+/* Bordes y decoraciones */
+.tarjeta, .tarjeta-precio, .entrada-blog, .testimonio {
+    border-bottom: 3px solid #fc6f03;
+    transition: all 0.3s ease;
+}
+
+.tarjeta:hover, .tarjeta-precio:hover, .entrada-blog:hover, .testimonio:hover {
+    border-bottom-color: #ff9a4a;
+    box-shadow: 0 10px 25px rgba(252, 111, 3, 0.2);
+}
+
+/* Iconos con glow */
+.icono-tarjeta, .testimonio i.fa-user-circle, .precio-caracteristicas .fa-check-circle {
+    filter: drop-shadow(0 0 4px rgba(252, 111, 3, 0.5));
+    transition: filter 0.3s;
+}
+
+.icono-tarjeta:hover {
+    filter: drop-shadow(0 0 10px #fc6f03);
+}
+
+/* Línea decorativa del menú */
+.menu-link::after {
+    background-color: #fc6f03;
+    box-shadow: 0 0 5px #fc6f03;
+}
+
+/* Precio destacado */
+.precio-numero {
+    font-size: 48px;
+    font-weight: 800;
+    color: #fc6f03;
+    text-shadow: 0 0 6px rgba(252, 111, 3, 0.5);
+}
+
+.boton, .btn-hero, .boton-precio, .proyecto-boton {
+    background-color: #fc6f03;  /* Color sólido, sin gradiente ni !important */
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 18px;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+.boton:hover, .btn-hero:hover, .boton-precio:hover, .proyecto-boton:hover {
+    background-color: #e05e00;
+    transform: scale(1.02);
+}
+
+/* Para el botón flotante de WhatsApp (NO se modifica) */
+.boton-whatsapp {
+    background-color: #25d366 !important;
+}
+
+/* Grises y blancos para buena legibilidad */
+body, p, li, .testimonio-texto, .blog-contenido p {
+    color: #cccccc;
+}
+
+h1, h2, h3, .titulo-principal, .subtitulo {
+    color: #f7f6f5;
+}
+
+.nombre-hero, .subtitulo, .precio-numero {
+    color: #fc6f03;
+}
+
+.blog-completo {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 15px;
+    text-align: left;
+}
+
+.blog-completo p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.blog-leer-mas {
+    display: inline-block;
+    margin-top: 10px;
+    transition: all 0.3s;
+}
+
+/* Blog: contenido completo (oculto por defecto) */
+.blog-completo {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 15px;
+    text-align: left;
+    display: none; /* Oculto por defecto */
+    transition: all 0.3s ease;
+}
+
+/* Cuando está visible */
+.blog-completo.activo {
+    display: block;
+}
+
+.blog-completo {
+    display: none; /* Asegura que arranque oculto */
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.blog-completo.activo {
+    display: block;
+    margin-top: 15px;
+    padding: 15px;
+    border-top: 1px solid #fc6f03;
+}
+
+/* Estilo normal de la tarjeta (cuando está cerrada) */
+.entrada-blog {
+    background: #0f3460;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 350px;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid #fc6f03;  /* Borde que siempre se ve */
+    margin-bottom: 20px;
 }
