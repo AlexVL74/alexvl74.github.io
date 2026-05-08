@@ -326,3 +326,49 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 console.log('✨ Alex VIDLA Dev - Página cargada correctamente');
+
+// ==========================================
+// BLOG: SOLO UNO ABIERTO - SIN ESPACIOS FANTASMA
+// ==========================================
+document.addEventListener('DOMContentLoaded', function() {
+    // Ocultar TODOS los contenidos completos desde el inicio
+    const todosLosContenidos = document.querySelectorAll('.blog-completo');
+    todosLosContenidos.forEach(contenido => {
+        contenido.style.display = 'none';
+    });
+
+    const botonesLeerMas = document.querySelectorAll('.blog-leer-mas');
+    
+    botonesLeerMas.forEach(boton => {
+        boton.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const articuloActual = this.closest('.entrada-blog');
+            const contenidoActual = articuloActual.querySelector('.blog-completo');
+            
+            // Si el contenido actual está visible, lo cerramos (lo eliminamos visualmente)
+            if (contenidoActual && contenidoActual.style.display === 'block') {
+                contenidoActual.style.display = 'none';
+                this.textContent = 'Leer más →';
+                return;
+            }
+            
+            // Cerrar todos los demás artículos (ocultar sus divs)
+            const todosLosArticulos = document.querySelectorAll('.entrada-blog');
+            todosLosArticulos.forEach(articulo => {
+                const contenido = articulo.querySelector('.blog-completo');
+                const boton = articulo.querySelector('.blog-leer-mas');
+                if (contenido && contenido !== contenidoActual) {
+                    contenido.style.display = 'none';
+                    if (boton) boton.textContent = 'Leer más →';
+                }
+            });
+            
+            // Abrir el artículo actual (mostrar el div)
+            if (contenidoActual) {
+                contenidoActual.style.display = 'block';
+                this.textContent = 'Leer menos ↑';
+            }
+        });
+    });
+});
