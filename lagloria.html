@@ -275,29 +275,35 @@
             .hero-content p { font-size: 18px; }
             .parallax { background-attachment: scroll; }
         }
+
+        .boton-flotante-volver {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: #0f3460;
+    color: #fc6f03;
+    padding: 10px 18px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: bold;
+    z-index: 9999;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: all 0.3s;
+}
+
+.boton-flotante-volver:hover {
+    background: #fc6f03;
+    color: white;
+    transform: translateX(-3px);
+}
+        
     </style>
 </head>
 <body>
 
-<!-- Hero con video 
-<div class="hero-video">
-
-    <!--<video autoplay muted loop id="bgVideo">
-        <source src="https://assets.mixkit.co/videos/preview/mixkit-trees-in-forest-4081-large.mp4" type="video/mp4">
-        Tu navegador no soporta video.
-    </video>
-    <!--<video autoplay muted loop playsinline id="bgVideo">
-        <source src="https://cdn.pixabay.com/video/2022/06/12/120938-722285131_large.mp4" type="video/mp4">
-    Tu navegador no soporta video.
-    </video>
-
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-        <h1>🌴 Palapa Campestre "La Gloria"</h1>
-        <p>Eventos inolvidables rodeados de naturaleza en Reforma, Chiapas</p>
-        <a href="#contacto" class="btn-hero">Cotizar Evento <i class="fas fa-arrow-right"></i></a>
-    </div>
-</div>-->
+<a href="index.html" class="boton-flotante-volver">
+    <i class="fas fa-arrow-left"></i> Volver</a>
+    
 <div class="hero-video" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('logo.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
     <div class="hero-content">
         <h1>🌴 Palapa Campestre "La Gloria"</h1>
