@@ -11,8 +11,9 @@ body {
     overflow-x: hidden;
     color: #cccccc;
     line-height: 1.6;
-}
 
+    padding-top: 80px;
+}
 .contenedor {
     background: #16213e;
     box-shadow: 0 20px 40px rgba(0,0,0,0.5);
@@ -26,7 +27,10 @@ body {
     margin-top: 20px;
     text-align: justify;
     overflow: visible;
+
+    margin-top: 80px;
 }
+
 
 h1 { color: #f7f6f5; }
 h2 { color: #fc6f03; }
@@ -456,30 +460,60 @@ textarea.campo {
     transition: border-bottom 0.3s ease;
 }
 
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #0a1628, #0f3460);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    flex-wrap: wrap;
+}
+
+
+
+
+
 .menu:hover {
     border-bottom: 2px solid #fc6f03;
 }
 
 .menu {
-    background: linear-gradient(135deg, #0a1628, #0f3460);
-    padding: 15px 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #0f3460;
+    z-index: 9999;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
-    top: 20px;
-    z-index: 1000;
+    padding: 12px 20px;
+    box-sizing: border-box;
     flex-wrap: wrap;
-    border-radius: 60px;
-    margin: 0 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(252, 111, 3, 0.2);
-    transition: all 0.3s ease;
 }
+
 
 .menu:hover {
     box-shadow: 0 15px 35px rgba(252, 111, 3, 0.2);
     transform: translateY(-2px);
+}
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #0a1628, #0f3460);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    flex-wrap: wrap;
 }
 
 
@@ -504,8 +538,16 @@ textarea.campo {
     100% { background-position: 0% 50%; }
 }
 
+.menu-logo {
+    display: flex;
+    align-items: center;
+}
 
-.menu-logo .logo { height: 70px; width: auto; }
+
+.menu-logo .logo {
+    height: 50px;
+    display: block;
+}
 
 .logo {
     height: 70px;
@@ -519,30 +561,41 @@ textarea.campo {
     filter: drop-shadow(0 0 8px rgba(252, 111, 3, 0.6));
 }
 
+/* Botón hamburguesa: visible solo en móvil */
 .menu-hamburguesa {
     display: none;
     background: none;
     border: none;
-    color: #ffffff;
+    color: white;
     font-size: 28px;
     cursor: pointer;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
 }
 
-.menu-links { display: flex; gap: 25px; }
+/* Enlaces escritorio */
+.menu-links {
+    display: flex;
+    gap: 25px;
+}
+
 
 .menu-link {
-    color: #ffffff;
+    color: white;
     text-decoration: none;
-    font-size: 16px;
-    padding-bottom: 5px;
-    position: relative;
-    transition: color 0.3s ease;
+    font-weight: 500;
+    transition: 0.3s;
 }
 
 
 .menu-link {
     position: relative;
     overflow: hidden;
+}
+
+.menu-link:hover {
+    color: #fc6f03;
 }
 
 .menu-link::before {
@@ -717,6 +770,7 @@ textarea.campo {
         padding: 20px 0;
         gap: 15px;
         background-color: #0f3460;
+
     }
     .menu-links.activo { display: flex; }
     .menu { flex-wrap: wrap; position: relative; }
@@ -1257,4 +1311,238 @@ h1, h2, h3, .titulo-principal, .subtitulo {
     transition: all 0.3s ease;
     border-bottom: 2px solid #fc6f03;  /* Borde que siempre se ve */
     margin-bottom: 20px;
+}
+
+#inicio, #servicios, #portafolio, #precios, #blog, #contacto {
+    scroll-margin-top: 100px;
+}
+
+@media (max-width: 768px) {
+    #inicio, #servicios, #portafolio, #precios, #blog, #contacto {
+        scroll-margin-top: 110px;
+    }
+}
+
+
+/* Menú fijo real */
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #0a1628, #0f3460);
+    z-index: 9999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+/* Que el contenido no quede tapado por el menú */
+body {
+    padding-top: 80px;
+}
+
+/* Ajuste para móvil */
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+}
+
+/* Scroll-margin-top para que los títulos no queden tapados */
+#inicio, #servicios, #portafolio, #precios, #blog, #contacto {
+    scroll-margin-top: 100px;
+}
+
+@media (max-width: 768px) {
+    #inicio, #servicios, #portafolio, #precios, #blog, #contacto {
+        scroll-margin-top: 120px;
+    }
+}
+
+/* === MENÚ FIJO === */
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #0a1628, #0f3460);
+    z-index: 9999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+/* === ESPACIO PARA QUE EL CONTENIDO NO QUEDE OCULTO === */
+body {
+    padding-top: 80px;
+}
+
+/* === PARA QUE LOS TÍTULOS NO QUEDEN TAPADOS === */
+#inicio, #servicios, #portafolio, #precios, #blog, #contacto {
+    scroll-margin-top: 100px;
+}
+
+/* === AJUSTE PARA MÓVIL === */
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+    #inicio, #servicios, #portafolio, #precios, #blog, #contacto {
+        scroll-margin-top: 150px;
+    }
+}
+
+/* === MENÚ FIJO CORREGIDO === */
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #0f3460;
+    z-index: 9999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+/* Botón hamburguesa a la derecha */
+.menu-hamburguesa {
+    margin-left: auto;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Logo a la izquierda */
+.menu-logo .logo {
+    height: 50px;
+}
+
+/* Enlaces del menú */
+.menu-links {
+    display: flex;
+    gap: 20px;
+}
+
+/* === ESPACIO PARA QUE EL CONTENIDO NO QUEDE OCULTO === */
+body {
+    padding-top: 70px;
+}
+
+/* === TÍTULOS TAPADOS: SOLUCIÓN === */
+section[id], div[id] {
+    scroll-margin-top: 100px;
+}
+
+/* Ajuste extra para móvil */
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px;
+    }
+    section[id], div[id] {
+        scroll-margin-top: 130px;
+    }
+}
+
+/* === MENÚ HAMBURGUESA SÓLO EN MÓVIL === */
+.menu-hamburguesa {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Móvil */
+@m/* === MÓVIL === */
+@media (max-width: 768px) {
+    .menu-hamburguesa {
+        display: block;
+    }
+
+    .menu-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background: #0f3460;
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 15px;
+        gap: 15px;
+        border-radius: 20px;
+    }
+
+    .menu-links.activo {
+        display: flex;
+    }
+
+    .menu-link {
+        font-size: 18px;
+        padding: 8px 0;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 10px 20px;
+    }
+    .menu {
+    align-items: center;
+    }
+
+    .menu-logo {
+        display: flex;
+        align-items: center;
+    }
+
+    .menu-hamburguesa {
+        display: block;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 28px;
+        cursor: pointer;
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+    }
+
+    .menu-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #0f3460;
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 15px;
+        border-radius: 15px;
+        gap: 15px;
+    }
+
+    .menu-links.activo {
+        display: flex;
+    }
+
+    .menu-link {
+        padding: 10px;
+        font-size: 18px;
+    }
 }
