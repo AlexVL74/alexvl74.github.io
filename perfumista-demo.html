@@ -302,15 +302,14 @@
 
         <div id="ofertas" class="carrusel">
             <i class="fas fa-gift"></i>
-            <h2>🎁 OFERTA ESPECIAL 🎁</h2>
+            <h2>🎁🎁🎁 OFERTA ESPECIAL 🎁🎁🎁</h2>
             <p>Lleva 2 perfumes y obtén un 15% de descuento + envío gratis.</p>
             <p>⏰ Solo por tiempo limitado.</p>
             <a href="#" class="btn" style="margin-top: 20px;" onclick="alert('✅ Esta oferta es parte de la demo. Cuando tu página esté activa, aquí se abrirá WhatsApp automáticamente.'); return false;">
                 Aprovechar oferta</a>
-            <!--<a href="https://wa.me/5219932858108?text=Hola,%20me%20interesa%20la%20oferta%20de%202%20perfumes%20con%2015%%20de%20descuento" class="btn" style="margin-top: 20px;" target="_blank">Aprovechar oferta</a>-->
         </div>
 
-        <h2 id="catalogo">Nuestras fragancias</h2>
+        <h2 id="catalogo">Nuestras Fragancias</h2>
 
         <div class="tabs">
             <div class="tab activo" data-genero="todos">Todos</div>
@@ -328,22 +327,13 @@
         </div>
 
         <div id="contacto" class="formulario">
-            <h2>🧴 ¿No encontraste tu fragancia ideal?</h2>
+            <h2>🧴 ¿No Encontraste tu Fragancia Ideal?</h2>
             <p style="text-align: center; margin-bottom: 20px;">Cuéntanos qué buscas y nosotros te ayudamos a conseguirla.</p>
             <input type="text" id="nombreCliente" class="campo" placeholder="Tu nombre">
             <textarea id="fraganciaDeseada" rows="4" class="campo" placeholder="Describe la fragancia que buscas..."></textarea>
             <button class="btn" style="width: 100%; cursor: pointer;" onclick="mostrarAlertaYLimpiar(); return false;">
-                Cotizar por WhatsApp</button>
-            
-            
-            <!--<button class="btn" style="width: 100%; cursor: pointer;" onclick="alert('✅ Esta demo es solo un ejemplo. Cuando tu página sea real, aquí podrás cotizar fragancias directamente por WhatsApp.'); return false;">
-                Cotizar por WhatsApp</button>-->
-            
-            <!--<button id="btnCotizarWhatsApp" class="btn" style="width: 100%; cursor: pointer;" onclick="alert('✅ Esta demo es solo un ejemplo. Cuando tu página sea real, aquí se abrirá WhatsApp para cotizar contigo.'); return false;">
-                Cotizar por WhatsApp</button>-->
-
-            <!--<button id="btnCotizarWhatsApp" class="btn" style="width: 100%; cursor: pointer;">Cotizar por WhatsApp</button>-->
-        </div>
+                Cotizar por WhatsApp</button>  
+       </div>
 
         <div style="text-align: center;">
             <a href="https://wa.me/5219174025447?text=Hola,%20me%20interesa%20tener%20una%20página%20como%20esta%20para%20mis%20perfumes" class="btn" target="_blank">
@@ -401,8 +391,8 @@
                 alert("Por favor, escribe tu nombre y la fragancia que buscas.");
                 return;
             }
-            const mensaje = `Hola, me llamo ${nombre}. Busco una fragancia que no encontré en tu catálogo: "${fragancia}". ¿Podrían ayudarme?`;
-            const url = `https://wa.me/5219932858108?text=${encodeURIComponent(mensaje)}`;
+            const mensaje = `Hola, me llamo ${nombre}. Busco una fragancia que no encontré en tu Catálogo: "${fragancia}". ¿Podrían ayudarme?`;
+            const url = `https://wa.me/5219174025447?text=${encodeURIComponent(mensaje)}`;
             window.open(url, "_blank");
             document.getElementById("nombreCliente").value = "";
             document.getElementById("fraganciaDeseada").value = "";
