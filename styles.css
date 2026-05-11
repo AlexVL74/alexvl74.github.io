@@ -1546,3 +1546,477 @@ section[id], div[id] {
         font-size: 18px;
     }
 }
+
+/* === HERO CON FONDO DINÁMICO === */
+.hero {
+    background: linear-gradient(135deg, #0a1628, #0f3460, #1a4a7a);
+    background-size: 200% 200%;
+    animation: gradienteMovil 8s ease infinite;
+    border-radius: 30px;
+    padding: 60px 40px;
+    text-align: center;
+    margin: 20px auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+@keyframes gradienteMovil {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* === FOTO CON GLOW (brillo sagrado xD) === */
+.foto {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #fc6f03;
+    box-shadow: 0 0 20px rgba(252, 111, 3, 0.6);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.foto:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 35px rgba(252, 111, 3, 0.9);
+}
+
+/* === TEXTO CON ANIMACIÓN === */
+.titulo-principal, .subtitulo-hero {
+    animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* === BOTONES CON EFECTO VIDRIO === */
+.btn-hero, .btn-hero-outline {
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+}
+
+.btn-hero:hover {
+    transform: scale(1.05);
+    background: #e05e00;
+}
+
+.btn-hero-outline:hover {
+    background: rgba(252, 111, 3, 0.2);
+    border-color: #fc6f03;
+    color: #fc6f03;
+}
+
+/* === HERO MODO EXTREMO === */
+.hero {
+    position: relative;
+    background: linear-gradient(135deg, #0a0f1a, #0f172a, #020617);
+    background-size: 200% 200%;
+    animation: gradienteExtremo 12s ease infinite;
+    border-radius: 40px;
+    padding: 80px 20px;
+    text-align: center;
+    margin: 30px auto;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    border: 1px solid rgba(252, 111, 3, 0.3);
+}
+
+@keyframes gradienteExtremo {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* === LÍNEAS DE CÓDIGO FLOTANTES === */
+.hero::before {
+    content: "'<html>' '<body>' '<h1>' '</h1>' '<footer>' '<script>' 'function' 'const' 'let' '=>' '{ }' '</script>' '@media' '{' '}'";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: rgba(252, 111, 3, 0.08);
+    font-family: monospace;
+    font-size: 14px;
+    white-space: pre-wrap;
+    pointer-events: none;
+    z-index: 0;
+    animation: moverCodigo 20s linear infinite;
+}
+
+@keyframes moverCodigo {
+    from { transform: translateY(0); }
+    to { transform: translateY(-50%); }
+}
+
+/* === FOTO CON EFECTO NEÓN + ESCÁNER === */
+.foto {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fc6f03;
+    box-shadow: 0 0 15px #fc6f03, 0 0 30px rgba(252, 111, 3, 0.5);
+    transition: all 0.4s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.foto:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 0 30px #fc6f03, 0 0 60px rgba(252, 111, 3, 0.8);
+    filter: brightness(1.1);
+}
+
+/* === TEXTO CON EFECTO MÁQUINA === */
+.titulo-principal {
+    font-size: 48px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #fff, #fc6f03);
+    background-clip: text;
+    color: transparent;
+    animation: fadeInUp 0.8s ease;
+}
+
+.subtitulo-hero {
+    font-size: 22px;
+    margin: 20px 0;
+    color: #cbd5e1;
+    animation: fadeInUp 1s ease;
+}
+
+.texto-animado {
+    color: #fc6f03;
+    font-weight: 600;
+    border-right: 2px solid #fc6f03;
+    padding-right: 5px;
+    animation: parpadeo 0.7s step-end infinite;
+}
+
+@keyframes parpadeo {
+    from, to { border-color: transparent; }
+    50% { border-color: #fc6f03; }
+}
+
+/* === BOTONES MODO EXTREMO === */
+.btn-hero, .btn-hero-outline {
+    position: relative;
+    z-index: 2;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.btn-hero {
+    background: linear-gradient(135deg, #fc6f03, #b04a00);
+    color: white;
+    box-shadow: 0 0 10px #fc6f03;
+}
+
+.btn-hero:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #fc6f03;
+}
+
+.btn-hero-outline {
+    border: 2px solid #fc6f03;
+    color: #fc6f03;
+    background: rgba(0,0,0,0.4);
+}
+
+.btn-hero-outline:hover {
+    background: #fc6f03;
+    color: #0a0a0a;
+    box-shadow: 0 0 15px #fc6f03;
+}
+
+/* === ANIMACIONES DE ENTRADA === */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "'<html>' '<body>' '<head>' '<title>' '<meta>' 'viewport' 'padding' 'margin' 'display' 'flex' 'grid' '@media' '{' '}' 'function' 'const' 'let' '=>' 'class' 'import' 'export' 'return' 'if' 'else' 'try' 'catch'";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    color: rgba(252, 111, 3, 0.05);
+    font-family: monospace;
+    font-size: 13px;
+    white-space: pre-wrap;
+    pointer-events: none;
+    z-index: 0;
+    animation: moverCodigoSuave 30s linear infinite;
+}
+
+@keyframes moverCodigoSuave {
+    from { transform: translate(0, 0); }
+    to { transform: translate(-10%, -10%); }
+}
+
+.hero .foto,
+.hero .titulo-principal,
+.hero .subtitulo-hero,
+.hero .hero-botones {
+    position: relative;
+    z-index: 2;
+}
+
+/* === FONDO FUTURISTA CON CÓDIGO FLOTANTE === */
+.hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0a0f1a, #0f172a, #020617);
+    background-size: 200% 200%;
+    animation: gradienteFuturista 12s ease infinite;
+}
+
+@keyframes gradienteFuturista {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.hero::before {
+    content: "'<html>' '<head>' '<title>' '<meta>' '<body>' '<div>' '<section>' '<h1>' '</h1>' '<p>' '<footer>' '<script>' 'function' 'const' 'let' '=>' 'if' 'else' 'return' 'import' 'export' 'class' 'extends' 'super' 'constructor' '{' '}' '()' '[]' '.map' '.filter' '.reduce' '@media' 'flex' 'grid' 'position' 'absolute' 'relative' 'fixed' 'sticky'";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150%;
+    height: 150%;
+    color: rgba(252, 111, 3, 0.06);
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    white-space: pre-wrap;
+    pointer-events: none;
+    z-index: 0;
+    animation: moverCodigoExtremo 40s linear infinite;
+}
+
+@keyframes moverCodigoExtremo {
+    from { transform: translate(0, 0); }
+    to { transform: translate(-15%, -15%); }
+}
+
+/* Asegura que el contenido del hero esté por encima del fondo flotante */
+.hero .foto,
+.hero .titulo-principal,
+.hero .subtitulo-hero,
+.hero .hero-botones {
+    position: relative;
+    z-index: 2;
+}
+
+/* FONDO CON LOGOS DE LENGUAJE */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero .logo-html,
+.hero .logo-css,
+.hero .logo-js {
+    position: absolute;
+    opacity: 0.25;
+    animation: brilloSuave 3s infinite alternate;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero .logo-html {
+    top: 15%;
+    left: 5%;
+    width: 80px;
+    animation-delay: 0s;
+}
+
+.hero .logo-css {
+    bottom: 10%;
+    right: 5%;
+    width: 90px;
+    animation-delay: 0.8s;
+}
+
+.hero .logo-js {
+    top: 40%;
+    right: 20%;
+    width: 85px;
+    animation-delay: 1.5s;
+}
+
+@keyframes brilloSuave {
+    0% { opacity: 0.15; filter: drop-shadow(0 0 0px #fc6f03); }
+    100% { opacity: 0.4; filter: drop-shadow(0 0 15px #fc6f03); }
+}
+
+
+/* Enlaces dentro del contenido del blog */
+.blog-completo a {
+    color: #fc6f03;
+    text-decoration: underline;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.blog-completo a:hover {
+    color: #ffaa33;
+    text-decoration: none;
+}
+
+/* Asegura que los enlaces no tengan fondo extraño */
+.blog-completo a:focus,
+.blog-completo a:visited {
+    color: #fc6f03;
+}
+
+   .blog-completo {
+    display: none !important;
+}
+
+.blog-completo[style*="display: block"] {
+    display: block !important;
+}
+
+/* Fuerza a que el contenido del blog sea visible cuando el script lo activa */
+.blog-completo {
+    display: none;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 15px;
+    text-align: left;
+    color: #cccccc;
+    border-left: 3px solid #fc6f03;
+}
+
+/* Cuando el script le pone display: block, se fuerza el estilo */
+.blog-completo[style*="display: block"] {
+    display: block !important;
+}
+
+/* Enlaces dentro del contenido */
+.blog-completo a {
+    color: #fc6f03;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.blog-completo a:hover {
+    color: #ffaa33;
+}
+
+/* Fuerza a que el contenido del blog se vea cuando el script lo activa */
+.blog-completo {
+    display: none;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 15px;
+    text-align: left;
+    color: #cccccc;
+    border-left: 3px solid #fc6f03;
+}
+
+.blog-completo[style*="display: block"] {
+    display: block !important;
+}
+
+.blog-completo a {
+    color: #fc6f03;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.blog-completo a:hover {
+    color: #ffaa33;
+}
+
+button.blog-boton-nuevo {
+    background: none;
+    border: none;
+    color: #fc6f03;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+button.blog-boton-nuevo:hover {
+    color: #ffaa33;
+    text-decoration: underline;
+}
+
+/* Enlaces dentro del contenido del blog */
+.blog-completo a {
+    color: #fc6f03 !important;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.blog-completo a:hover {
+    color: #ffaa33 !important;
+    text-decoration: none;
+}
+
+.blog-completo a,
+.blog-completo a:link,
+.blog-completo a:visited,
+.blog-completo a:hover,
+.blog-completo a:active {
+    color: #fc6f03 !important;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.blog-completo a:hover {
+    color: #ffaa33 !important;
+    text-decoration: none;
+}
+
+/* Fuerza a que todos los enlaces dentro del contenido sean naranja */
+.blog-completo a,
+.blog-completo a:link,
+.blog-completo a:visited {
+    color: #fc6f03 !important;
+    text-decoration: underline;
+}
+
+.blog-completo a:hover {
+    color: #ffaa33 !important;
+    text-decoration: none;
+}
+
+.blog-completo a {
+    color: #fc6f03 !important;
+    text-decoration: underline;
+}
+
+.blog-completo a:hover {
+    color: #ffaa33 !important;
+    text-decoration: none;
+}
