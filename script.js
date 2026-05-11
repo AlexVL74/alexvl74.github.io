@@ -372,3 +372,58 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// ==========================================
+// BLOG: LEER MÁS - VERSIÓN EXTREMA (funciona siempre)
+// ==========================================
+(function() {
+    function iniciarBlog() {
+        var botones = document.querySelectorAll('.blog-leer-mas');
+        console.log('Botones encontrados:', botones.length);
+        
+        for (var i = 0; i < botones.length; i++) {
+            var boton = botones[i];
+            boton.onclick = function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                var articulo = this.parentNode.parentNode;
+                var contenido = articulo.querySelector('.blog-completo');
+                
+                if (!contenido) {
+                    console.log('No se encontró .blog-completo');
+                    return;
+                }
+                
+                // Cerrar todos los demás
+                var todosLosArticulos = document.querySelectorAll('.entrada-blog');
+                for (var j = 0; j < todosLosArticulos.length; j++) {
+                    var otroArticulo = todosLosArticulos[j];
+                    var otroContenido = otroArticulo.querySelector('.blog-completo');
+                    var otroBoton = otroArticulo.querySelector('.blog-leer-mas');
+                    if (otroContenido && otroContenido !== contenido) {
+                        otroContenido.style.display = 'none';
+                        if (otroBoton) otroBoton.textContent = 'Leer más →';
+                    }
+                }
+                
+                // Abrir o cerrar el actual
+                if (contenido.style.display === 'block') {
+                    contenido.style.display = 'none';
+                    this.textContent = 'Leer más →';
+                } else {
+                    contenido.style.display = 'block';
+                    this.textContent = 'Leer menos ↑';
+                }
+                
+                return false;
+            };
+        }
+    }
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', iniciarBlog);
+    } else {
+        iniciarBlog();
+    }
+})();
